@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🏢 Room Booking</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#bookings">My Bookings</a></li>
+                <li><a href="#login" class="btn-login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Book Your Perfect Room</h1>
+            <p>Fast, easy, and secure room booking for meetings, conferences, and events</p>
+            <a href="#rooms" class="btn btn-primary">Browse Rooms</a>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-form">
+                <input type="date" id="startDate" placeholder="Start Date" class="form-input">
+                <input type="date" id="endDate" placeholder="End Date" class="form-input">
+                <select id="capacity" class="form-input">
+                    <option value="">Capacity</option>
+                    <option value="5">5 persons</option>
+                    <option value="10">10 persons</option>
+                    <option value="20">20+ persons</option>
+                </select>
+                <button class="btn btn-primary" onclick="searchRooms()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms-section" id="rooms">
+        <div class="container">
+            <h2>Available Rooms</h2>
+            <div class="rooms-grid" id="roomsList">
+                <div class="loading">Loading rooms...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bookings-section" id="bookings">
+        <div class="container">
+            <h2>My Bookings</h2>
+            <div class="bookings-list" id="bookingsList">
+                <p>No bookings yet. <a href="#rooms">Book a room</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login / Register</h2>
+            <form id="authForm" onsubmit="handleAuth(event)">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" class="form-input">
+                </div>
+                <button type="submit" class="btn btn-primary">Login / Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Room</h2>
+            <form id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label for="bookRoomId">Room:</label>
+                    <input type="text" id="bookRoomId" class="form-input" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="bookStartDate">Start Date & Time:</label>
+                    <input type="datetime-local" id="bookStartDate" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookEndDate">End Date & Time:</label>
+                    <input type="datetime-local" id="bookEndDate" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookNotes">Notes:</label>
+                    <textarea id="bookNotes" class="form-input" rows="4"></textarea>
+                </div>
+                <div class="price-info">
+                    <strong>Total Price: $<span id="totalPrice">0</span></strong>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Room Booking System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
