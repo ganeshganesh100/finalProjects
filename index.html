@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FoodyX - Food Delivery</title>
+<title>FoodyX Pro</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -13,317 +12,314 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
     background:#111;
-    overflow-x:hidden;
+    color:#fff;
 }
 
-/* ================= NAVBAR ================= */
+/* Navbar */
 
 header{
-    position:fixed;
+    position:sticky;
     top:0;
-    width:100%;
+    background:#000;
+    padding:15px 30px;
     z-index:1000;
-    backdrop-filter:blur(12px);
-    background:rgba(0,0,0,0.35);
-    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.navbar{
-    max-width:1300px;
-    margin:auto;
+nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 40px;
 }
 
 .logo{
-    color:#fff;
     font-size:28px;
-    font-weight:700;
+    font-weight:bold;
 }
 
 .logo span{
     color:#ff7b00;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:#ff7b00;
-}
-
-/* ================= HERO ================= */
+/* Hero */
 
 .hero{
     height:100vh;
-    position:relative;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.7)
+    ),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80');
+
+    background-size:cover;
+    background-position:center;
+
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    overflow:hidden;
-}
-
-.slider{
-    position:absolute;
-    width:100%;
-    height:100%;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    transition:1s ease;
-}
-
-.slide.active{
-    opacity:1;
-}
-
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.75)
-    );
-}
-
-.hero-content{
-    position:relative;
-    z-index:10;
-    max-width:850px;
     padding:20px;
 }
 
-.tag{
-    color:#ffb347;
-    font-weight:600;
-    letter-spacing:2px;
-    margin-bottom:15px;
-}
-
-.hero-content h1{
-    color:white;
+.hero h1{
     font-size:4rem;
-    line-height:1.2;
-    margin-bottom:20px;
 }
 
-.hero-content h1 span{
+.hero span{
     color:#ff7b00;
 }
 
-.hero-content p{
-    color:#ddd;
+.hero p{
+    margin-top:15px;
     font-size:1.1rem;
-    margin-bottom:35px;
-}
-
-/* BUTTONS */
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
 }
 
 .btn{
-    text-decoration:none;
-    padding:14px 35px;
-    border-radius:50px;
-    font-weight:600;
-    transition:.4s;
-}
-
-.btn-primary{
-    background:linear-gradient(
-        135deg,
-        #ff7b00,
-        #ff4d4d
-    );
-    color:white;
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px);
-}
-
-.btn-outline{
-    border:2px solid white;
-    color:white;
-}
-
-.btn-outline:hover{
-    background:white;
-    color:black;
-}
-
-/* SLIDER BUTTONS */
-
-.arrow{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:20;
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,0.2);
-    color:white;
-    cursor:pointer;
-    font-size:20px;
-}
-
-.arrow:hover{
+    margin-top:25px;
+    padding:14px 30px;
     background:#ff7b00;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
 }
 
-.prev{
-    left:20px;
+.btn:hover{
+    background:#ff5500;
 }
 
-.next{
-    right:20px;
+/* Sections */
+
+.section{
+    padding:80px 20px;
+    text-align:center;
 }
 
-/* RESPONSIVE */
+.section h2{
+    margin-bottom:20px;
+}
+
+/* Search */
+
+.search{
+    max-width:500px;
+    margin:auto;
+}
+
+.search input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:#222;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px 0;
+}
+
+.card p{
+    padding:0 15px 15px;
+}
+
+/* Offer */
+
+.offer{
+    background:#1b1b1b;
+    padding:20px;
+    border-radius:12px;
+    max-width:600px;
+    margin:auto;
+}
+
+/* Testimonial */
+
+.testimonial{
+    background:#1b1b1b;
+    padding:20px;
+    border-radius:12px;
+    max-width:700px;
+    margin:auto;
+}
+
+/* Footer */
+
+footer{
+    background:#000;
+    padding:30px;
+    text-align:center;
+}
+
+/* Responsive */
 
 @media(max-width:768px){
 
-    .hero-content h1{
-        font-size:2.6rem;
-    }
+.hero h1{
+    font-size:2.5rem;
+}
 
-    .nav-links{
-        display:none;
-    }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-    <div class="navbar">
+    <nav>
+
         <div class="logo">
             Foody<span>X</span>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Offers</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-        </ul>
-    </div>
+        <div>
+            <i class="fas fa-shopping-cart"></i>
+            Cart
+        </div>
+
+    </nav>
 </header>
 
 <section class="hero">
 
-    <div class="slider">
+    <h1>
+        Delicious Food
+        <span>Delivered Fast</span>
+    </h1>
 
-        <div class="slide active"
-        style="background-image:url('assets/burger.jpg')"></div>
+    <p>
+        Order from top restaurants near you.
+    </p>
 
-        <div class="slide"
-        style="background-image:url('assets/pizza.jpg')"></div>
+    <a href="#menu" class="btn">
+        Explore Menu
+    </a>
 
-        <div class="slide"
-        style="background-image:url('assets/chicken.jpg')"></div>
+</section>
 
+<section class="section">
+
+    <h2>Search Food</h2>
+
+    <div class="search">
+        <input
+        type="text"
+        id="search"
+        placeholder="Search menu items...">
     </div>
 
-    <div class="overlay"></div>
+</section>
 
-    <div class="hero-content">
+<section id="menu" class="section">
 
-        <p class="tag">FAST • FRESH • DELICIOUS</p>
+    <h2>Popular Dishes</h2>
 
-        <h1>
-            Delicious Food
-            <span>Delivered Fast</span>
-        </h1>
+    <div class="cards" id="menuCards">
 
-        <p>
-            Order your favorite meals from top restaurants and
-            get them delivered fresh to your doorstep in minutes.
-        </p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500">
+            <h3>Burger</h3>
+            <p>Juicy beef burger with cheese.</p>
+        </div>
 
-        <div class="hero-buttons">
-            <a href="#" class="btn btn-primary">
-                Order Now
-            </a>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500">
+            <h3>Pizza</h3>
+            <p>Loaded with mozzarella cheese.</p>
+        </div>
 
-            <a href="#" class="btn btn-outline">
-                View Menu
-            </a>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908176997-431f90b3f1e6?w=500">
+            <h3>Chicken</h3>
+            <p>Crispy fried chicken bucket.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500">
+            <h3>Pasta</h3>
+            <p>Italian creamy pasta special.</p>
         </div>
 
     </div>
 
-    <button class="arrow prev">
-        <i class="fas fa-chevron-left"></i>
-    </button>
+</section>
 
-    <button class="arrow next">
-        <i class="fas fa-chevron-right"></i>
-    </button>
+<section class="section">
+
+    <h2>Special Offer</h2>
+
+    <div class="offer">
+        🔥 Get 30% OFF on orders above $20
+    </div>
 
 </section>
 
+<section class="section">
+
+    <h2>Customer Reviews</h2>
+
+    <div class="testimonial">
+        ⭐⭐⭐⭐⭐ Amazing food and super fast delivery!
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 FoodyX Pro. All Rights Reserved.</p>
+</footer>
+
 <script>
-const slides = document.querySelectorAll(".slide");
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
 
-let current = 0;
+const search = document.getElementById("search");
 
-function showSlide(index){
-    slides.forEach(slide =>
-        slide.classList.remove("active")
-    );
+search.addEventListener("keyup", () => {
 
-    slides[index].classList.add("active");
-}
+    const value = search.value.toLowerCase();
 
-next.addEventListener("click", () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+    document.querySelectorAll("#menuCards .card")
+    .forEach(card => {
+
+        if(card.innerText.toLowerCase().includes(value)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
 });
 
-prev.addEventListener("click", () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-});
-
-setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-}, 5000);
 </script>
 
 </body>
