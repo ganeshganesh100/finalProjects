@@ -53,11 +53,7 @@ Edit `.env` and add your MongoDB URI:
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/room-booking
 JWT_SECRET=your_secret_key_here
-NODE_ENV=development
-```
-
-4. **Start the server**
-```bash
+NODE_ENV=develop
 # Development mode with auto-reload
 npm run dev
 
