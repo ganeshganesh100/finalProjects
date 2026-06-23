@@ -1,12 +1,6 @@
 
 
-### Frontend
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-- **Room Browse**: View available rooms with detailed information
-- **Advanced Search**: Filter rooms by date, time, and capacity
-- **User Authentication**: Simple login/register system
-- **Booking Management**: Create, view, and cancel bookings
-- **Real-time Pricing**: Automatic price calculation based on duration
+
 
 ### Backend
 - **REST API**: Full-featured REST API for all operations
