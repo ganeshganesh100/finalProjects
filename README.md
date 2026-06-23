@@ -1,8 +1,4 @@
-# Room Booking System - Full Stack
 
-A comprehensive full-stack web application for booking meeting rooms, conference halls, and event spaces.
-
-## 🎯 Features
 
 ### Frontend
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
