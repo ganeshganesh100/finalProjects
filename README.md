@@ -8,9 +8,7 @@
 - **Room Management**: Create, update, and manage room listings
 - **Booking System**: Complete booking lifecycle management
 - **Availability Check**: Real-time room availability checking
-- **Database Integration**: MongoDB for data persistence
 
-## 📦 Tech Stack
 
 ### Frontend
 - HTML5
