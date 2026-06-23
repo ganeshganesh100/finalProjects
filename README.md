@@ -2,12 +2,6 @@
 
 
 
-### Backend
-- **REST API**: Full-featured REST API for all operations
-- **User Management**: Registration, login, and profile management
-- **Room Management**: Create, update, and manage room listings
-- **Booking System**: Complete booking lifecycle management
-- **Availability Check**: Real-time room availability checking
 
 
 ### Frontend
