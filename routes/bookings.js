@@ -52,25 +52,5 @@ router.post('/', async (req, res) => {
 });
 
 // Cancel booking
-router.put('/:id/cancel', async (req, res) => {
-  try {
-    const { id } = req.params;
-    // Update booking status to cancelled in MongoDB
-    res.json({ message: `Booking ${id} cancelled` });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
 
-// Check availability
-router.post('/check-availability', async (req, res) => {
-  try {
-    const { roomId, startDate, endDate } = req.body;
-    // Check against existing bookings in MongoDB
-    res.json({ available: true });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
 
-module.exports = router;
