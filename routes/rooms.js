@@ -4,17 +4,7 @@ const Room = require('../models/Room');
 const router = express.Router();
 
 // Get all rooms
-router.get('/', async (req, res) => {
-  try {
-    const rooms = await Room.find();
-    res.status(200).json(rooms);
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
-  }
-});
+
 
 // Get room by ID
 router.get('/:id', async (req, res) => {
