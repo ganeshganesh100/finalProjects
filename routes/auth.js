@@ -37,15 +37,6 @@ router.post('/login', async (req, res) => {
     // This is a simplified example - in production, fetch from database
     const isValid = await User.validatePassword(password, password); // Use real hashed password from DB
     
-    const token = jwt.sign({ email }, process.env.JWT_SECRET);
-    res.json({
-      message: 'Login successful',
-      token,
-      user: { email }
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+
 
 module.exports = router;
